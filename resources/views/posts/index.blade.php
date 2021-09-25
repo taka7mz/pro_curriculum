@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Blog Site</h1>
+        <p class='create'>[<a href="/posts/create">新規作成</a>]</p>
         <div class = 'posts'>
             @foreach ($posts as $post)
                 <div class = 'post'>
@@ -18,10 +19,8 @@
                 </div>
             @endforeach
         </div>
-        
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
-        
     </body>
 </html>
