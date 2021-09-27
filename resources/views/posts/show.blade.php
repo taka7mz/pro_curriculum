@@ -11,8 +11,13 @@
     <body>
         <h1>Blog Site</h1>
         <div class = 'edit'>
-            [<a href='/posts/{{ $post->id }}/edit'>編集</a>]
+            <a href='/posts/{{ $post->id }}/edit'>編集</a>
         </div>
+        <form action="/posts/{{ $post->id }}" id="form_delete" method="post" style="display:inline">
+            @csrf
+            @method('DELETE')
+            <button type="button" onclick="return deletePost();">削除</button>
+        </form>
         <div class = 'post'>
             <h2 class = 'title'>{{ $post->title }}</h2>
             <p class = 'body'>{{ $post->body }}</p>
@@ -21,6 +26,13 @@
         <div class = 'footer'>
             [<a href='/'>back</a>]
         </div>
+        <script>
+            function deletePost(){
+                'use strict';
+                if(confirm('削除すると元に戻せません。削除しますか？')){
+                   document.getElementById('form_delete').submit();
+                }
+            }   
+        </script>
     </body>
-    
 </html>
