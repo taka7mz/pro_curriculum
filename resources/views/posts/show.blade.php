@@ -10,13 +10,16 @@
     
     <body>
         <h1>Blog Site</h1>
+        <div class = 'edit'>
+            [<a href='/posts/{{ $post->id }}/edit'>編集</a>]
+        </div>
         <div class = 'post'>
             <h2 class = 'title'>{{ $post->title }}</h2>
             <p class = 'body'>{{ $post->body }}</p>
             <p class = 'updated_at'>{{ $post->updated_at}}</p>
         </div>
         <div class = 'footer'>
-            <a href='/'>back</a>
+            [<a href='/'>back</a>]
         </div>
     </body>
     
